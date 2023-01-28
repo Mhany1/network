@@ -1,0 +1,58 @@
+[
+    {
+        "name": "jack",
+        "date": "12/1/2020",
+        "salary":2000,
+        "experience": 2,
+        "department": "IT" 
+    },
+    {
+        "name": "tomas",
+        "date": "12/5/2019",
+        "salary":5000,
+        "experience": 4,
+        "department": "HR" 
+    },
+    {
+        "name": "rick",
+        "date": "26/8/2020",
+        "salary":3000,
+        "experience": 3,
+        "department": "Finance" 
+    },
+    {
+        "name": "rizk",
+        "date": "5/12/2021",
+        "salary":1000,
+        "experience": 6,
+        "department": "HR" 
+    },
+    {
+        "name": "ramy",
+        "date": "22/6/2020",
+        "salary":1000,
+        "experience": 1,
+        "department": "Development" 
+    },
+    {
+        "name": "said",
+        "date": "30/7/2018",
+        "salary":8000,
+        "experience": 2,
+        "department": "IT" 
+    },
+    {
+        "name": "mohamed",
+        "date": "12/1/2020",
+        "salary":2000,
+        "experience": 2,
+        "department": "IT" 
+    },
+    {
+        "name": "jack",
+        "date": "12/1/2020",
+        "salary":2000,
+        "experience": 2,
+        "department": "IT" 
+    }
+]

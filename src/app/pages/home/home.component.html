@@ -1,0 +1,136 @@
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 mb-4 section-inputs">
+                <div class="">
+                    <h1 class="d-lg-block d-md-block d-none">Filters</h1>
+                    <div class="links w-100 d-flex justify-content-between d-lg-none d-md-none d-block">
+                        <h1>Filters</h1>
+                        <span (click)="showData()" class="icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <ul #datares>
+                            <li>
+                                <mat-form-field class="example-full-width w-100">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput placeholder="Jack" [(ngModel)]="filterationOptions.name"
+                                        [value]="filterationOptions.name" name="name">
+                                </mat-form-field>
+                            </li>
+                            <li>
+                                <mat-form-field class="w-100" appearance="fill">
+                                    <mat-label>Joining Date</mat-label>
+                                    <input matInput [matDatepicker]="picker" [(ngModel)]="filterationOptions.date">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </li>
+                            <li>
+                                <mat-form-field class="w-100" appearance="fill">
+                                    <mat-label>Department</mat-label>
+                                    <mat-select [(ngModel)]="filterationOptions.department">
+                                        <mat-option *ngFor="let pro of Departments" [value]="pro.value">
+                                            {{pro.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </li>
+                            <li>
+                                <mat-form-field class="example-full-width w-100">
+                                    <mat-label>Salary</mat-label>
+                                    <input matInput placeholder="4000" [(ngModel)]="filterationOptions.salary"
+                                        [value]="filterationOptions.salary">
+                                </mat-form-field>
+                            </li>
+                            <li>
+                                <mat-form-field class="w-100" appearance="fill">
+                                    <mat-label>Experience</mat-label>
+                                    <mat-select [(ngModel)]="filterationOptions.experience">
+                                        <mat-option *ngFor="let proo of Experience" [value]="proo.value">
+                                            {{proo.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </li>
+                            <div class="d-flex justify-content-between">
+                                <button mat-raised-button color="primary" (click)="reset()">Clear All</button>
+                                <button mat-raised-button color="primary"
+                                    (click)="employeefilteration()">Filter</button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="d-lg-block d-md-block d-none">
+                    <mat-form-field class="example-full-width w-100">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Jack" [(ngModel)]="filterationOptions.name"
+                            [value]="filterationOptions.name" name="name">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Joining Date</mat-label>
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="filterationOptions.date">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Department</mat-label>
+                        <mat-select [(ngModel)]="filterationOptions.department">
+                            <mat-option *ngFor="let pro of Departments" [value]="pro.value">
+                                {{pro.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width w-100">
+                        <mat-label>Salary</mat-label>
+                        <input matInput placeholder="4000" [(ngModel)]="filterationOptions.salary"
+                            [value]="filterationOptions.salary">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Experience</mat-label>
+                        <mat-select [(ngModel)]="filterationOptions.experience">
+                            <mat-option *ngFor="let proo of Experience" [value]="proo.value">
+                                {{proo.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="d-flex justify-content-between">
+                        <button mat-raised-button color="primary" (click)="reset()">Clear All</button>
+                        <button mat-raised-button color="primary" (click)="employeefilteration()">Filter</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8 col-md-6 col-12">
+                <div class="w-100">
+                    <table class="table table-hover">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="head-text" scope="col">Name</th>
+                                <th class="head-text" scope="col">Date</th>
+                                <th class="head-text" scope="col">Salary</th>
+                                <th class="head-text" scope="col">Experience</th>
+                                <th class="head-text" scope="col">Department</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let employee of allData | filterEmployee:filterationOptions">
+                            <tr>
+                                <th class="line1">{{employee.name}}</th>
+                                <td class="line">{{employee.date}}</td>
+                                <td class="line">{{employee.salary}} K</td>
+                                <td class="line">{{employee.experience}} years</td>
+                                <td class="line">{{employee.department}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

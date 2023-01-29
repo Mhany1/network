@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { FilterEmployeePipe } from './pipes/filter-employee.pipe';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { FilterEmployeePipe } from './pipes/filter-employee.pipe';
     MatIconModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
    
   ],
   providers: [],

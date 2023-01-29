@@ -10,29 +10,39 @@ export class FilterEmployeePipe implements PipeTransform {
 
   transform(value: any[], filterationOptions: any): any {
 
-
-    let filteredEmployees = []
-
-    if (Object.values(filterationOptions).every(value => value == '')) return value
-    else {
-
+    let filtaratedArr = value.filter(employee => {
       for (const key in filterationOptions) {
-        if (filterationOptions[key] !== "") {
-          filteredEmployees = value.filter(employee => {
-            return filterationOptions[key] == employee[key]
-          })
-          console.log(filteredEmployees);
-
-        }
-
+          if (filterationOptions[key] !== "") {
+              if (employee[key] != filterationOptions[key]) {
+                  return false
+              }
+          }
       }
+      return true;
+  })
+  return filtaratedArr;
+    // let filteredEmployees = []
 
-      return filteredEmployees
+    // if (Object.values(filterationOptions).every(value => value == '')) return value
+    // else {
+
+    //   for (const key in filterationOptions) {
+    //     if (filterationOptions[key] !== "") {
+    //       filteredEmployees = value.filter(employee => {
+    //         return filterationOptions[key] == employee[key]
+    //       })
+    //       console.log(filteredEmployees);
+
+    //     }
+
+    //   }
+
+    //   return filteredEmployees
 
 
 
 
-    }
+    // }
 
   }
 
